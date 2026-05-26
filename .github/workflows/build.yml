@@ -13,7 +13,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y python3-pip build-essential git zip unzip openjdk-17-jdk autoconf automake libtool libffi-dev libssl-dev
-          pip3 install buildozer cython
+          pip3 install buildozer==1.5.0 cython==0.29.33
       - name: Build APK
         run: |
           mkdir -p ~/.android
