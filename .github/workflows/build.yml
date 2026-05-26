@@ -14,8 +14,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-pip build-essential git zip unzip openjdk-17-jdk autoconf automake libtool libffi-dev libssl-dev
           pip3 install buildozer kivy yt-dlp cython
-      - name: Build APK
-        run: buildozer android debug
+      - name: Accept licenses and Build APK
+        run: |
+          mkdir -p ~/.android
+          echo "count=0" > ~/.android/repositories.cfg
+          yes | buildozer android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
