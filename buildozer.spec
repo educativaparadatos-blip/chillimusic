@@ -1,4 +1,3 @@
-
 [app]
 title = Chilli Music
 package.name = chillimusic
